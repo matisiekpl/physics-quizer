@@ -3,26 +3,34 @@
     <h2>{{ question['question'] }}</h2>
     <p style="font-size: 26px">
       <input type="checkbox" id="answer_a" name="answer_a" v-model="answer_a_selected">
-      <label for="answer_a">{{ question['answer_a'] }}
+      <label for="answer_a"><span :class="{'blue':question['answer_a_correct']&&checking}" style="margin-right: 12px;">{{
+          question['answer_a']
+        }}</span>
         <span class="green" v-if="checking&&answer_a_correct">Dobrze</span>
         <span class="red"
               v-if="checking&&!answer_a_correct">Źle</span>
       </label><br>
 
       <input type="checkbox" id="answer_b" name="answer_b" v-model="answer_b_selected">
-      <label for="answer_b">{{ question['answer_b'] }}
+      <label for="answer_b"><span :class="{'blue':question['answer_b_correct']&&checking}" style="margin-right: 12px;">{{
+          question['answer_b']
+        }}</span>
         <span class="green" v-if="checking&&answer_b_correct">Dobrze</span>
         <span class="red"
               v-if="checking&&!answer_b_correct">Źle</span></label><br>
 
       <input type="checkbox" id="answer_c" name="answer_c" v-model="answer_c_selected">
-      <label for="answer_c">{{ question['answer_c'] }} <span class="green"
-                                                             v-if="checking&&answer_c_correct">Dobrze</span>
+      <label for="answer_c"><span :class="{'blue':question['answer_c_correct']&&checking}" style="margin-right: 12px;">{{
+          question['answer_c']
+        }}</span> <span class="green"
+                        v-if="checking&&answer_c_correct">Dobrze</span>
         <span class="red"
               v-if="checking&&!answer_c_correct">Źle</span></label><br>
 
       <input type="checkbox" id="answer_d" name="answer_d" v-model="answer_d_selected">
-      <label for="answer_d">{{ question['answer_d'] }}
+      <label for="answer_d"><span :class="{'blue':question['answer_d_correct']&&checking}" style="margin-right: 12px;">{{
+          question['answer_d']
+        }}</span>
         <span class="green" v-if="checking&&answer_d_correct">Dobrze</span>
         <span class="red"
               v-if="checking&&!answer_d_correct">Źle</span></label><br>
@@ -39,6 +47,15 @@
 
 <script>
 const questions = require('../assets/questions.json');
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
 
 export default {
   name: 'HelloWorld',
@@ -57,16 +74,34 @@ export default {
     };
   },
   mounted() {
-    this.question = questions[Math.floor(Math.random() * questions.length)];
+    this.load();
   },
   methods: {
+    load() {
+      this.question = questions[Math.floor(Math.random() * questions.length)];
+      const pairs = [];
+      pairs.push([this.question['answer_a'], this.question['answer_a_correct']]);
+      pairs.push([this.question['answer_b'], this.question['answer_b_correct']]);
+      pairs.push([this.question['answer_c'], this.question['answer_c_correct']]);
+      pairs.push([this.question['answer_d'], this.question['answer_d_correct']]);
+      shuffleArray(pairs);
+      this.question['answer_a'] = pairs[0][0];
+      this.question['answer_a_correct'] = pairs[0][1];
+      this.question['answer_b'] = pairs[1][0];
+      this.question['answer_b_correct'] = pairs[1][1];
+      this.question['answer_c'] = pairs[2][0];
+      this.question['answer_c_correct'] = pairs[2][1];
+      this.question['answer_d'] = pairs[3][0];
+      this.question['answer_d_correct'] = pairs[3][1];
+    },
     check() {
       this.answer_a_correct = this.answer_a_selected === this.question['answer_a_correct'];
       this.answer_b_correct = this.answer_b_selected === this.question['answer_b_correct'];
       this.answer_c_correct = this.answer_c_selected === this.question['answer_c_correct'];
       this.answer_d_correct = this.answer_d_selected === this.question['answer_d_correct'];
       this.checking = true;
-    }, next() {
+    },
+    next() {
       this.answer_a_correct = false;
       this.answer_b_correct = false;
       this.answer_c_correct = false;
@@ -76,7 +111,7 @@ export default {
       this.answer_c_selected = false;
       this.answer_d_selected = false;
       this.checking = false;
-      this.question = questions[Math.floor(Math.random() * questions.length)];
+      this.load();
     }
   }
 }
@@ -94,5 +129,9 @@ input[type=checkbox] {
 
 .red {
   color: red;
+}
+
+.blue {
+  color: blue;
 }
 </style>
