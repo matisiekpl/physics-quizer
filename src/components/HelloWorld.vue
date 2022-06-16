@@ -71,14 +71,17 @@ export default {
       answer_c_correct: false,
       answer_d_correct: false,
       checking: false,
+      questions,
+      i: 0,
     };
   },
   mounted() {
+    shuffleArray(this.questions);
     this.load();
   },
   methods: {
     load() {
-      this.question = questions[Math.floor(Math.random() * questions.length)];
+      this.question = questions[this.i++];
       const pairs = [];
       pairs.push([this.question['answer_a'], this.question['answer_a_correct']]);
       pairs.push([this.question['answer_b'], this.question['answer_b_correct']]);
