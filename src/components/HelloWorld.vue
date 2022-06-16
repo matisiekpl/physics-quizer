@@ -1,58 +1,95 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+    <h2>{{ question['question'] }}</h2>
+    <p style="font-size: 26px">
+      <input type="checkbox" id="answer_a" name="answer_a" v-model="answer_a_selected">
+      <label for="answer_a">{{ question['answer_a'] }}
+        <span class="green" v-if="checking&&answer_a_correct">Dobrze</span>
+        <span class="red"
+              v-if="checking&&!answer_a_correct">Źle</span>
+      </label><br>
+
+      <input type="checkbox" id="answer_b" name="answer_b" v-model="answer_b_selected">
+      <label for="answer_b">{{ question['answer_b'] }}
+        <span class="green" v-if="checking&&answer_b_correct">Dobrze</span>
+        <span class="red"
+              v-if="checking&&!answer_b_correct">Źle</span></label><br>
+
+      <input type="checkbox" id="answer_c" name="answer_c" v-model="answer_c_selected">
+      <label for="answer_c">{{ question['answer_c'] }} <span class="green"
+                                                             v-if="checking&&answer_c_correct">Dobrze</span>
+        <span class="red"
+              v-if="checking&&!answer_c_correct">Źle</span></label><br>
+
+      <input type="checkbox" id="answer_d" name="answer_d" v-model="answer_d_selected">
+      <label for="answer_d">{{ question['answer_d'] }}
+        <span class="green" v-if="checking&&answer_d_correct">Dobrze</span>
+        <span class="red"
+              v-if="checking&&!answer_d_correct">Źle</span></label><br>
+
     </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+
+    <button @click="check" style="font-size: 26px; margin-right: 12px;">Sprawdź</button>
+    <button @click="next" style="font-size: 26px;">Losuj</button>
   </div>
 </template>
 
 <script>
+const questions = require('../assets/questions.json');
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  data() {
+    return {
+      question: {},
+      answer_a_selected: false,
+      answer_b_selected: false,
+      answer_c_selected: false,
+      answer_d_selected: false,
+      answer_a_correct: false,
+      answer_b_correct: false,
+      answer_c_correct: false,
+      answer_d_correct: false,
+      checking: false,
+    };
+  },
+  mounted() {
+    this.question = questions[0];
+  },
+  methods: {
+    check() {
+      this.answer_a_correct = this.answer_a_selected === this.question['answer_a_correct'];
+      this.answer_b_correct = this.answer_b_selected === this.question['answer_b_correct'];
+      this.answer_c_correct = this.answer_c_selected === this.question['answer_c_correct'];
+      this.answer_d_correct = this.answer_d_selected === this.question['answer_d_correct'];
+      this.checking = true;
+    }, next() {
+      this.answer_a_correct = false;
+      this.answer_b_correct = false;
+      this.answer_c_correct = false;
+      this.answer_d_correct = false;
+      this.answer_a_selected = false;
+      this.answer_b_selected = false;
+      this.answer_c_selected = false;
+      this.answer_d_selected = false;
+      this.checking = false;
+      this.question = questions[Math.floor(Math.random() * questions.length)];
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<style>
+input[type=checkbox] {
+  transform: scale(1.5);
+  margin-right: 12px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.green {
+  color: green;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.red {
+  color: red;
 }
 </style>
