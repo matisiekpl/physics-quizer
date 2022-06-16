@@ -29,6 +29,8 @@
 
     </p>
 
+    <h1 style="color: green" v-if="answer_a_correct&&answer_b_correct&&answer_c_correct&&answer_d_correct">Gratulacje</h1>
+
     <button @click="check" style="font-size: 26px; margin-right: 12px;">Sprawdź</button>
     <button @click="next" style="font-size: 26px;">Losuj</button>
   </div>
