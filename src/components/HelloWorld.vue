@@ -81,6 +81,10 @@ export default {
   },
   methods: {
     load() {
+      if (this.i > this.questions.length - 1) {
+        alert('Czas na piwo!');
+        return;
+      }
       this.question = questions[this.i++];
       const pairs = [];
       pairs.push([this.question['answer_a'], this.question['answer_a_correct']]);
