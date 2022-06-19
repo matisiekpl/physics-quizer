@@ -578,8 +578,8 @@
     "answer_c": "$-(\\Delta pV)/\\Delta V$",
     "answer_d": "$(\\Delta pV)/\\Delta V$",
     "answer_a_correct": false,
-    "answer_b_correct": false,
-    "answer_c_correct": true,
+    "answer_b_correct": true,
+    "answer_c_correct": false,
     "answer_d_correct": false
   },
   {
