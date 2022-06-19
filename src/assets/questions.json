@@ -172,7 +172,7 @@
     "answer_d": "jest stała w czasie",
     "answer_a_correct": true,
     "answer_b_correct": true,
-    "answer_c_correct": false,
+    "answer_c_correct": true,
     "answer_d_correct": false
   },
   {
@@ -698,8 +698,8 @@
     "answer_b": "Przyspieszenie grawitacyjne zmienia się na powierzchni Ziemi w związku z ruchem obiegowym Ziemi",
     "answer_c": "Przyspieszenie grawitacyjne zmienia się na powierzchni Ziemi w związku niesferycznym elipsoidalnym kształtem Kuli ziemskiej",
     "answer_d": "Przyspieszenie grawitacyjne zmienia się na powierzchni Ziemi w związku niejednorodnoscią gęstości Kuli Ziemskiej",
-    "answer_a_correct": false,
-    "answer_b_correct": false,
+    "answer_a_correct": true,
+    "answer_b_correct": true,
     "answer_c_correct": true,
     "answer_d_correct": true
   },
