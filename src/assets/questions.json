@@ -205,7 +205,7 @@
     "answer_d": "przyśpieszenie kątowe jest stałe a prześpieszenie normalne wyznacza się na podstawie iloczynu skalarnego wektorów prędkości kątowej i prędkości liniowej ?(to samo co w c)",
     "answer_a_correct": false,
     "answer_b_correct": false,
-    "answer_c_correct": true,
+    "answer_c_correct": false,
     "answer_d_correct": false
   },
   {
