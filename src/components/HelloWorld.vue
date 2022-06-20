@@ -41,7 +41,9 @@
       Gratulacje</h1>
 
     <button @click="check" style="font-size: 26px; margin-right: 12px;">Sprawdź</button>
-    <button @click="next" style="font-size: 26px;">Losuj</button>
+    <button @click="load(-1)" style="font-size: 26px;">Wstecz</button>
+    <b style="margin-left: 4px; margin-right: 4px;">{{ i + 1 }}</b>
+    <button @click="load(1)" style="font-size: 26px;">Dalej</button>
   </div>
 </template>
 
@@ -77,16 +79,26 @@ export default {
   },
   mounted() {
     shuffleArray(this.questions);
-    this.load();
+    this.load(0);
   },
   methods: {
-    load() {
+    load(direction = 1) {
+      this.i = Math.max(this.i + direction, 0);
+      this.question = questions[this.i];
+      const pairs = [];
+      this.answer_a_correct = false;
+      this.answer_b_correct = false;
+      this.answer_c_correct = false;
+      this.answer_d_correct = false;
+      this.answer_a_selected = false;
+      this.answer_b_selected = false;
+      this.answer_c_selected = false;
+      this.answer_d_selected = false;
+      this.checking = false;
       if (this.i > this.questions.length - 1) {
         alert('Czas na piwo!');
         return;
       }
-      this.question = questions[this.i++];
-      const pairs = [];
       pairs.push([this.question['answer_a'], this.question['answer_a_correct']]);
       pairs.push([this.question['answer_b'], this.question['answer_b_correct']]);
       pairs.push([this.question['answer_c'], this.question['answer_c_correct']]);
@@ -109,15 +121,7 @@ export default {
       this.checking = true;
     },
     next() {
-      this.answer_a_correct = false;
-      this.answer_b_correct = false;
-      this.answer_c_correct = false;
-      this.answer_d_correct = false;
-      this.answer_a_selected = false;
-      this.answer_b_selected = false;
-      this.answer_c_selected = false;
-      this.answer_d_selected = false;
-      this.checking = false;
+
       this.load();
     }
   }
