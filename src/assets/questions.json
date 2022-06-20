@@ -105,9 +105,9 @@
     "answer_c": "Stosunek kwadratu czasu obiegu planety wokół Słońca i trzeciej potęgi średniej odległości planety od Słońca jest wielkością stałą, taką samą dla wszystkich ciał układu słonecznego",
     "answer_d": "Sześciany półosi wielkich orbit dowolnych planet mają się do siebie jak kwadraty ich okresów obiegu (półoś wielka jest połową najdłuższej cięciwy elipsy)",
     "answer_a_correct": false,
-    "answer_b_correct": false,
+    "answer_b_correct": true,
     "answer_c_correct": true,
-    "answer_d_correct": false
+    "answer_d_correct": true
   },
   {
     "question": "Pojemność cieplna ciała to:",
