@@ -40,9 +40,9 @@
     <h1 style="color: green" v-if="answer_a_correct&&answer_b_correct&&answer_c_correct&&answer_d_correct">
       Gratulacje</h1>
 
-    <button @click="check" style="font-size: 26px; margin-right: 12px;">Sprawdź</button>
-    <button @click="load(-1)" style="font-size: 26px;">Wstecz</button>
-    <b style="margin-left: 4px; margin-right: 4px;">{{ i + 1 }}</b>
+    <button @click="check" style="font-size: 26px; margin-right: 12px;">Sprawdź</button><br/>
+    <button @click="load(-1)" style="font-size: 26px;">Wstecz</button><br/>
+    <b style="margin-left: 4px; margin-right: 4px;">{{ i + 1 }}</b><br/>
     <button @click="load(1)" style="font-size: 26px;">Dalej</button>
   </div>
 </template>
