@@ -84,8 +84,8 @@
     "answer_d": "zmaleje 2 razy",
     "answer_a_correct": false,
     "answer_b_correct": false,
-    "answer_c_correct": true,
-    "answer_d_correct": false
+    "answer_c_correct": false,
+    "answer_d_correct": true
   },
   {
     "question": "W odniesieniu do przemiany adiabatycznej nie jest prawdziwe stwierdzenie:",
@@ -513,7 +513,7 @@
     "answer_d": "głośność dźwięku jest odwrotnie proporcjonalna do logarytmu dziesiętnego z wartości bodźca",
     "answer_a_correct": false,
     "answer_b_correct": true,
-    "answer_c_correct": false,
+    "answer_c_correct": true,
     "answer_d_correct": false
   },
   {
@@ -556,7 +556,7 @@
     "answer_c": "wzrasta liniowo wraz ze wzrostem wysokości",
     "answer_d": "maleje eksponencjalnie wraz ze wzrostem wysokości",
     "answer_a_correct": false,
-    "answer_b_correct": false,
+    "answer_b_correct": true,
     "answer_c_correct": false,
     "answer_d_correct": true
   },
@@ -578,8 +578,8 @@
     "answer_c": "$-(\\Delta pV)/\\Delta V$",
     "answer_d": "$(\\Delta pV)/\\Delta V$",
     "answer_a_correct": false,
-    "answer_b_correct": true,
-    "answer_c_correct": false,
+    "answer_b_correct": false,
+    "answer_c_correct": true,
     "answer_d_correct": false
   },
   {
