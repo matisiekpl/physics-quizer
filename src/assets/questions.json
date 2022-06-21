@@ -22,7 +22,7 @@
     "answer_d_correct": true
   },
   {
-    "question": "Prawo bezwładości mówi, że:",
+    "question": "Prawo bezwładności mówi, że:",
     "answer_a": "każde ciało pozostaje w spoczynku lub porusza się ruchem jednostajnym prostoliniowym, dopóki działanie innych ciał nie zmusi go do zmiany tego stanu",
     "answer_b": "wektor siły bezwładności jest wyrażony poprzez iloczyn masy i przyśpieszenia układu poprzedzony znakiem minus",
     "answer_c": "ciało o mniejszym momencie bezwładności łatwiej wprawić w ruch",
@@ -733,6 +733,28 @@
     "answer_d": "$K*mol/J$",
     "answer_a_correct": true,
     "answer_b_correct": true,
+    "answer_c_correct": false,
+    "answer_d_correct": false
+  },
+  {
+    "question": "Która z informacji dotyczącej zderzeń ciał nie jest prawdziwa?",
+    "answer_a": "Zderzenie niesprężyste – zderzenie w którym całkowita energia kinetyczna układu nie jest zachowana w wyniku zderzenia, a pęd układu pozostaje stały",
+    "answer_b": "Zderzenie zachodzi, gdy dwa lub więcej ciał działa na siebie stosunkowo dużymi siłami w stosunkowo krótkim czasie",
+    "answer_c": "Zderzenie sprężyste – zderzenie w którym całkowita energia kinetyczna układu zmienia się w wyniku zderzenia, ale pęd układu pozostaje stały",
+    "answer_d": "Zderzenie sprężyste – zderzenie, w którym całkowita energia kinetyczna układu nie zmienia się w wyniku zderzenia",
+    "answer_a_correct": false,
+    "answer_b_correct": false,
+    "answer_c_correct": true,
+    "answer_d_correct": false
+  },
+  {
+    "question": "Przyśpieszenie styczne a w ruchu po okręgu wyznaczamy jako:",
+    "answer_a": "a = ⍵ x v",
+    "answer_b": "a = 𝛼 x r",
+    "answer_c": "a = r x 𝛼",
+    "answer_d": "a = v x ⍵",
+    "answer_a_correct": false,
+    "answer_b_correct": false,
     "answer_c_correct": false,
     "answer_d_correct": false
   }
