@@ -754,8 +754,30 @@
     "answer_c": "a = r x 𝛼",
     "answer_d": "a = v x ⍵",
     "answer_a_correct": false,
-    "answer_b_correct": false,
+    "answer_b_correct": true,
     "answer_c_correct": false,
     "answer_d_correct": false
+  },
+  {
+    "question": "Natężenie jednorodnego pola elektrycznego, wytworzonego przez dwie równoległe płaszczyzny, naładowane różnoimiennym ładunkiem, przy stałej wartości potencjału elektrycznego:",
+    "answer_a": "wzrasta liniowo wraz ze wzrostem odległości między płytami",
+    "answer_b": "maleje liniowo wraz ze wzrostem odległości między płytami",
+    "answer_c": "wzrasta kwadratowo wraz ze wzrostem odległości między płytami",
+    "answer_d": "pozostaje stałe przy zmianie odległości między płytami",
+    "answer_a_correct": false,
+    "answer_b_correct": false,
+    "answer_c_correct": false,
+    "answer_d_correct": true
+  },
+  {
+    "question": "Ładunek Q jest rozłożony równomiernie na sferycznej, nieprzewodzącej powłoce.Całkowity strumień pola elektrycznego przez wewnętrzną i zewnętrzną powierzchnię powłoki wynosi odpowiednio:",
+    "answer_a": "Q/4πε0 i Q/πε0",
+    "answer_b": "2Q/ε0 i 0",
+    "answer_c": "Q/ε0 i 2Q/ε0",
+    "answer_d": "0 i Q/ε0",
+    "answer_a_correct": false,
+    "answer_b_correct": false,
+    "answer_c_correct": false,
+    "answer_d_correct": true
   }
 ]
