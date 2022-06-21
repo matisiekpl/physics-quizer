@@ -710,7 +710,7 @@
     "answer_c": "równanie Bernoulliego",
     "answer_d": "równanie ciągłości strugi",
     "answer_a_correct": false,
-    "answer_b_correct": false,
+    "answer_b_correct": true,
     "answer_c_correct": true,
     "answer_d_correct": false
   },
